@@ -1,0 +1,89 @@
+@light-blue: #E3F2FD;
+@blue: #2196F3;
+.react-calendar {
+    width: 300px;
+    position: relative;
+    & > input {
+        width:100%;
+    }
+    &__body {
+        width: 100%;
+        background: white;
+        border: 1px solid #dddede;
+        box-shadow: 2px 3px 5px rgba(0,0,0,0.15);
+        color: @blue;
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        &.open {
+            display: block;
+        }
+        &__title {
+            width: 100%;
+            display: flex;
+            padding: 20px 0px;
+            white-space: nowrap;
+            & > * {
+                width: 33%;
+                text-align: center;
+                align-self: center;
+            }
+            & > a {
+                background: @blue;
+                text-decoration: none;
+                color: white;
+                margin: 0em 1em;
+                padding: 5px;
+            }
+        }
+        &__dates {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 0 20px 20px 20px;
+            &__labels {
+                width: 100%;
+                color: black;
+            }
+            & > span {
+                cursor: pointer;
+            }
+            span {
+                display: inline-block;
+                width: calc( 100% / 7);
+                height: 25px;
+                text-align: center;
+                line-height: 25px;
+                &[disabled] {
+                    color: #888888;
+                    cursor: not-allowed;
+                }
+                &:nth-child(7n + 1) {
+                    border: 0;
+                }
+                &.today {
+                    position: relative;
+                    &:before {
+                        content: '';
+                        display: inline-block;
+                        width: 1.5em;
+                        height: 1.5em;
+                        position: absolute;
+                        top:50%;
+                        left:50%;
+                        transform: translate(-50%,-50%);
+                        border-radius: 5em;
+                        z-index: 1;
+                        border: 1px solid rgb(120,200,255);
+                    }
+                }
+                &.active {
+                    position: relative;
+                    background: @blue;
+                    color: white;
+                }
+            }
+        }
+    }
+}
