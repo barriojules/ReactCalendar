@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.1",
   "description": "React calendar",
-  "main": "",
+  "main": "index.js",
   "scripts": {
     "start": "node server.js --env=dev",
     "test": "karma start",
@@ -21,7 +21,7 @@
   },
   "repository": "",
   "keywords": [],
-  "author": "Your name here",
+  "author": "Julián Barrionuevo",
   "devDependencies": {
     "babel-core": "^6.0.0",
     "babel-eslint": "^6.0.0",
